@@ -23,4 +23,4 @@ Enter API SECRET: Your-secret-key
 ```
 python manage.py runserver
 ```
-Hopefully there should be no errors. You are all set.
+Hopefully there should be no errors. You are all set. Go to [http://localhost:8000](http://localhost:8000) and login with Upstox credentials.
