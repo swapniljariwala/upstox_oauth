@@ -1,3 +1,7 @@
+# Introduction
+This is a Very simple Django based backend for Upstox API. This will help you get started, But do keep in mind that running server on localhost is not safe.
+
+This Django app server will help you complete the OAuth login flow, get access token and saves it in os environment and local file. The accesss token remains valid for a day. You can directly use this access token from the os environment.
 ### Clone git repository:
 ```
 git clone https://github.com/swapniljariwala/upstox_oauth.git
