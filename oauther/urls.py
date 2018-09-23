@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import upstox
+import upstox_auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upstox/', include('upstox.urls')),
-    path('', upstox.views.home, name='index')
+    path('upstox/', include('upstox_auth.urls')),
+    path('', upstox_auth.views.home, name='index')
 ]
