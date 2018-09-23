@@ -16,8 +16,20 @@
       <a href="{% url 'home' %}" class="btn btn-primary " role="button" aria-pressed="true">Home</a>
       <a href="{% url 'login' %}" class="btn btn-primary " role="button" aria-pressed="true">Login with Upstox (Token Expired)</a>
       <br/> <br/><p> Access Token: <kbd id="accesstoken"> {{accesstoken}}</kbd></p> 
-    
+      <p> Run <kbd> python token_test.py</kbd> to test access</p>
+      <p>
+      import os <br/>
+      from dotenv import load_dotenv <br/>
+      from upstox_api.api import Upstox <br/>
+      load_dotenv() <br/>
+      API_KEY = os.getenv("API_KEY") <br/>
+      ACCESS_TOKEN = os.getenv("ACCESS_TOKEN") <br/>
+      u = Upstox(API_KEY, ACCESS_TOKEN) <br/>
+      print(u.get_profile()) # get profile <br/>
+  
+    </p>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

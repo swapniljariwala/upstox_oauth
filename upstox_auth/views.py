@@ -35,7 +35,16 @@ def redirect(request):
     code = request.GET.get('code')
     if not code:
         raise Http404("Did not receive ACCESS_TOKEN")
-    dotenv.set_key(dotenv.find_dotenv(), 'ACCESS_TOKEN', code)
+    API_KEY = os.getenv('API_KEY')
+    API_SECRET = os.getenv('API_SECRET')
+    s = api.Session(API_KEY)
+    s.set_api_secret (API_SECRET)
+    url = request.build_absolute_uri(reverse('redirect'))
+    s.set_redirect_uri(url)
+    s.set_code(code)
+    access_token = s.retrieve_access_token()
+    print(access_token)
+    dotenv.set_key(dotenv.find_dotenv(), 'ACCESS_TOKEN', access_token)
     return HttpResponseRedirect(reverse('readaccesstoken'))
 
 def readaccesstoken(request):
