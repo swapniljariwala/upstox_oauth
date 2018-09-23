@@ -1,0 +1,4 @@
+Django==2.1.1
+upstox
+python-dotenv
+django-dotenv
