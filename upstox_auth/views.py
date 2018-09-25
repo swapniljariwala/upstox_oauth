@@ -25,7 +25,7 @@ def home(request):
 
 def login_upstox(request):
     if not request.user.is_authenticated:
-        HttpResponseRedirect("{}?alert=unauthorized".format(reverse('djangologin')))
+        return HttpResponseRedirect("{}?alert=unauthorized".format(reverse('djangologin')))
     API_KEY = os.getenv('API_KEY')
     API_SECRET = os.getenv('API_SECRET')
     s = api.Session(API_KEY)
