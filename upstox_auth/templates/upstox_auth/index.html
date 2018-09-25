@@ -19,8 +19,14 @@
     </div>
     {% endif %}
     <h2 class="text-left">If Setup is already complete </h2>
+    {% if is_auth %}
+    <a href="{% url 'djangologout' %}" class="btn btn-primary " role="button" aria-pressed="true">Admin Logout </a>
     <a href="{% url 'login' %}" class="btn btn-primary " role="button" aria-pressed="true">Login with Upstox</a>
     <a href="{% url 'readaccesstoken' %}" class="btn btn-primary " role="button" aria-pressed="true">Read Existing Access Token</a>
+    
+    {% else %}
+    <a href="{% url 'djangologin' %}" class="btn btn-primary " role="button" aria-pressed="true">Admin Login </a>
+    {% endif %}
     <br/><br/><h2 class="text-left">How to set up </h2>
     <a href="https://github.com/swapniljariwala/upstox_oauth"> Follow this link to read more on steps to setup Upstox Oauth Client </a>
     <br/><br/><h3 class="text-left">Steps- </h3>
